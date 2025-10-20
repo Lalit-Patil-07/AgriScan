@@ -1,0 +1,50 @@
+{
+  "Apple Scab": {
+    "description": "Apple Scab is a common fungal disease that affects apple and crabapple trees. It causes olive-green or brown spots on leaves, fruit, and twigs.",
+    "symptoms": [
+      "Velvety, olive-green spots on leaves that later turn black.",
+      "Leaves may become twisted and puckered.",
+      "Dark, scabby spots on fruit, which can crack and become deformed.",
+      "Infected leaves often fall prematurely."
+    ],
+    "prevention": [
+      "Prune trees in late winter to improve air circulation.",
+      "Rake and destroy all fallen leaves in autumn to reduce fungal spores.",
+      "Plant disease-resistant apple varieties.",
+      "Apply appropriate fungicides during the growing season, starting at bud-break."
+    ]
+  },
+  "Apple Healthy": {
+    "description": "The leaf appears to be healthy and free of any visible diseases or pests.",
+    "symptoms": [
+      "Uniform green color.",
+      "No spots, discoloration, or curling.",
+      "Leaf shape is normal for the species."
+    ],
+    "prevention": [
+      "Continue good watering, fertilization, and pruning practices.",
+      "Monitor regularly for early signs of stress or disease.",
+      "Ensure adequate spacing for good air circulation."
+    ]
+  },
+  "Tomato Mosaic Virus": {
+    "description": "A viral infection that affects tomatoes and other plants. It causes mottled light/dark green patterns on leaves and can stunt plant growth.",
+    "symptoms": [
+      "Light and dark green mosaic or mottle patterns on leaves.",
+      "Leaves may be curled, distorted, or smaller than normal.",
+      "Plants may appear stunted.",
+      "Fruit may be discolored, deformed, or have internal browning."
+    ],
+    "prevention": [
+      "There is no cure. Remove and destroy infected plants immediately.",
+      "Wash hands and tools thoroughly with soap after handling plants.",
+      "Control aphids and other insects that can spread the virus.",
+      "Avoid planting in the same spot where diseased plants were."
+    ]
+  },
+  "Default": {
+    "description": "No specific information available for this class.",
+    "symptoms": ["N/A"],
+    "prevention": ["Ensure proper watering, fertilization, and pest control."]
+  }
+}

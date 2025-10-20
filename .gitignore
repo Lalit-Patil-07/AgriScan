@@ -1,0 +1,16 @@
+# Python cache & virtual environments
+__pycache__/
+venv/
+*.pyc
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+
+# Notebook checkpoints
+.ipynb_checkpoints
+
+# Data files
+
+data
