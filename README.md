@@ -1,82 +1,69 @@
 # Plant Disease Detection using CNN
 
-Plant Disease Detection is an innovative machine learning project that harnesses the power of Convolutional Neural Networks (CNN) and deep learning techniques to identify and classify diseases in plants.
+This project is a high-accuracy plant disease detection system deployed as a full-stack web application. It uses a **PyTorch-based Convolutional Neural Network (CNN)**, built on a **ResNet50** architecture, to classify 38 different plant diseases from leaf images. The application is served through a **Python (FastAPI) backend API** and consumed by a modern **React frontend**.
 
-Try the app here: [Plant Disease Detection App](https://plant-disease-detection-7czedgzrnxqhvmvyhnwi8y.streamlit.app/)
+## Model Details
+
+The model was trained using transfer learning on a pre-trained **ResNet50** architecture.
+
+  * **Framework:** PyTorch
+  * **Base Architecture:** ResNet50 (from `torchvision.models`)
+  * **Performance:** Achieved **97.7% validation accuracy**
+  * **Key Techniques:**
+      * Transfer learning (only the final fully-connected layer was trained).
+      * Data Augmentation (RandomFlip, Rotation, ColorJitter) to improve robustness.
+      * Class Balancing using `WeightedRandomSampler` to handle imbalanced data.
+  * **Trained Model:** The best model weights are saved in `plant_disease_resnet50_best.pth`.
 
 ## Dataset
 
-The dataset used for this project can be found on Kaggle:
-[New Plant Diseases Dataset](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset?resource=download).
+The model was trained on the **New Plant Diseases Dataset (Augmented)**, which is publicly available on Kaggle. This dataset contains over 87,000 RGB images of plant leaves, categorized into 38 distinct classes (including healthy and diseased leaves).
 
-The dataset is organized into subdirectories for each category of plant diseases and healthy plants. The data is split into training and validation datasets.
+  * **Source:** [Kaggle: New Plant Diseases Dataset (Augmented)](https://www.google.com/search?q=https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset-augmented)
+  * **Classes:** 38
 
 ## Project Structure
 
-The project comprises essential components:
+The project is now divided into three main components:
 
-- `Plant_disease(CNN).ipynb`: Jupyter Notebook with the code for model training.
-- `main_app.py`: Streamlit web application for plant disease prediction.
-- `plant_disease_model.h5`: Pre-trained model weights.
-- `requirements.txt`: List of necessary Python packages.
+  * `/model_training.ipynb`: The Jupyter notebook containing all steps for data loading, preprocessing, model training, and evaluation.
+  * `/plant-disease-api/`: The backend Python API (FastAPI) that serves the trained PyTorch model.
+  * `/plant-disease-ui/`: The new frontend web application built with React.
 
-## Installation
+## How to Run the New Application
 
-To run the project locally, follow these steps:
+To run the complete application, you must start both the backend API and the frontend UI.
 
-1. Clone the repository:
+### 1\. Backend (API)
 
-```bash
-git clone <your-repository-link>
-```
-
-2. Navigate to the project directory:
+(Instructions based on the `plant-disease-api` folder)
 
 ```bash
-cd <your-project-folder>
-```
+# Navigate to the API directory
+cd plant-disease-api
 
-3. Install the required packages:
-
-```bash
+# Install required Python packages
 pip install -r requirements.txt
+
+# Run the API server (using uvicorn)
+uvicorn app.main:app --reload
 ```
 
-4. Run the Streamlit web application:
+### 2\. Frontend (React App)
+
+(Instructions from the `plant-disease-ui/README.md`)
+
+In a **new terminal**:
 
 ```bash
-streamlit run main_app.py
+# Navigate to the UI directory
+cd plant-disease-ui
+
+# Install node modules
+npm install
+
+# Run the app in development mode
+npm start
 ```
 
-## Usage
-
-Once the application is running, open your web browser and navigate to [http://localhost:8501](http://localhost:8501). Upload an image of a plant leaf, and the system will predict if it is affected by any disease.
-
-## Model Training
-
-The model is a Sequential CNN model built using Keras/TensorFlow. It includes:
-
-- Convolutional Layers
-- Max Pooling Layers
-- Dropout Layers
-- Fully Connected Layers
-
-The training process involves:
-
-- Data Preprocessing
-- Data Augmentation
-- Model Compilation using Adam Optimizer
-- Model Training and Evaluation
-
-The model's performance is evaluated using metrics like accuracy and loss over training and validation datasets.
-
-## Future Improvements
-
-- Hyperparameter Tuning
-- Using Transfer Learning
-- Expanding the dataset with more classes
-
-## License
-
-This project is licensed under the MIT License.
-
+Once both services are running, you can view the app in your browser at [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000).
